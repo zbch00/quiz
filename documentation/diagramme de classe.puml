@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+
+class Question {
+- id : int
+- intitulé : string
+- reponse : array
+- reponseCorrect : string
+}
+
+class Theme {
+- id : int
+- libellé : string
+}
+
+Question "1..*"--"1..1" Theme
+
+@enduml
