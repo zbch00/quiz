@@ -24,10 +24,7 @@ class Theme extends Fixture
         $theme3->setLibelle('UFC');
         $this->addReference('theme3',$theme3);
         $manager->persist($theme3);
-
-
         $manager->flush();
-
 
     }
 }

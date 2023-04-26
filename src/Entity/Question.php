@@ -29,7 +29,7 @@ class Question
     private array $reponse = [];
 
     #[ORM\Column(length: 255)]
-    #[Groups(['list_questions','themes'])]
+    #[Groups(['themes','list_questions'])]
     private ?string $reponseCorrect = null;
 
     public function getId(): ?int

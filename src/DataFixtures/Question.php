@@ -4,8 +4,8 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
-class Question extends Fixture
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+class Question extends Fixture implements DependentFixtureInterface
 {
 
     public function load(ObjectManager $manager): void
@@ -29,13 +29,6 @@ class Question extends Fixture
         $question->setReponse(['EA','Ubisoft','Activision','Psyonix']);
         $question->setTheme($this->getReference('theme1'));
         $question->setIntitule('Quelle est l\'entreprise qui a créer Rocket League ?');
-        $manager->persist($question);
-
-        $question = new \App\Entity\Question();
-        $question->setReponseCorrect("Deku");
-        $question->setReponse(['Deku','Midoriya','Izuku','AllMight']);
-        $question->setTheme($this->getReference('theme1'));
-        $question->setIntitule('Quel est le nom de héro du personnage principal de My Hero Academia ?');
         $manager->persist($question);
 
         $question = new \App\Entity\Question();
@@ -133,5 +126,12 @@ class Question extends Fixture
         $manager->persist($question);
 
         $manager->flush();
+    }
+
+    public function getDependencies(): array
+    {
+        return [
+            Theme::class
+        ];
     }
 }

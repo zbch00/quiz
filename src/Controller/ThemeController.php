@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use App\Dto;
 
 class ThemeController extends AbstractController
 {
@@ -42,16 +41,4 @@ class ThemeController extends AbstractController
       return new Response($themeJson, Response::HTTP_OK,['content-type' => 'application/json']);
     }
 
-    #[Route('/theme/question/{id}', name: 'app_theme_question_id', methods: ['GET'])]
-    public function getQuestionByTheme($id): Response
-    {
-        $theme = $this->themeRepository->find($id);
-        $dto = new Dto\ThemeQuestionCountDto();
-        $dto->setLibelle($id);
-        $dto->setLibelle($theme->getLibelle());
-        $dto->setNbQuestions(count($theme->getQuestions()));
-        $dtoJson = $this->serializer->serialize(
-            $dto, 'json',['groups' => 'list_questions']);
-        return new Response($dtoJson, Response::HTTP_OK,['content-type' => 'application/json']);
-    }
 }
