@@ -13,15 +13,15 @@ class Theme
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[Groups(['get_theme'])]
     #[ORM\Column(length: 255)]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['get_theme'])]
+    #[Groups(['get_theme','themes','list_questions'])]
     private ?string $libelle = null;
 
     #[ORM\OneToMany(mappedBy: 'theme', targetEntity: Question::class)]
+    #[Groups(['get_theme'])]
     private Collection $questions;
 
     public function __construct()

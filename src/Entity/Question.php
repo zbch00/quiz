@@ -13,21 +13,23 @@ class Question
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(length: 255)]
-    #[Groups(['list_questions'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['list_questions'])]
+    #[Groups(['list_questions','themes'])]
     private ?string $intitule = null;
 
     #[ORM\ManyToOne(inversedBy: 'questions')]
+    #[Groups(['list_questions','themes'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Theme $theme = null;
 
     #[ORM\Column(type: Types::ARRAY)]
+    #[Groups(['list_questions','themes'])]
     private array $reponse = [];
 
     #[ORM\Column(length: 255)]
+    #[Groups(['list_questions','themes'])]
     private ?string $reponseCorrect = null;
 
     public function getId(): ?int
