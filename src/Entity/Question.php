@@ -19,7 +19,7 @@ class Question
     #[Groups(['list_questions','themes'])]
     private ?string $intitule = null;
 
-    #[ORM\ManyToOne(inversedBy: 'questions')]
+    #[ORM\ManyToOne(cascade: ['persist'], inversedBy: 'questions')]
     #[Groups(['list_questions','themes'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Theme $theme = null;
