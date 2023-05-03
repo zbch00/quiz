@@ -1,22 +1,22 @@
 .shadowfort {
-    box-shadow: 0px 7px 15px -3px rgb(0, 39, 59);
+    box-shadow: 0px 7px 15px -3px rgb(6, 59, 0);
 }
 
 .border-d{
-    border: 2px solid #207650;
+    border: 10px double rgba(32, 118, 80, 0.42);
     padding: 2vh;
     background: rgba(85, 151, 122, 0.15);
-    border-radius: 42vh;
-    margin-right: 8vh;
-    margin-left: 8vh;
-    padding: 5vh;
+    border-radius: 20vh;
+    margin-right: 5vh;
+    margin-left: 5vh;
+    padding: 2vh;
 }
 .displayNone{
   display: none;
 }
 .espace{
-    margin-right: 15vh;
-    margin-left: 15vh;
+    margin-right: 20vh;
+    margin-left: 20vh;
 }
 
 .grosBtn{

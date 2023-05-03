@@ -634,7 +634,7 @@ class Question extends Fixture implements DependentFixtureInterface
         $manager->persist($question);
 
         $question = new \App\Entity\Question();
-        $question->setReponseCorrect("'Invasion de la Pologne par l\'Allemagne'");
+        $question->setReponseCorrect("Invasion de la Pologne par l'Allemagne");
         $question->setReponse(['Invasion de la Belgique par l\'Allemagne','Invasion de la Pologne par l\'Allemagne','Invasion de l\'Italie par l\'Allemagne','Invasion de la France par l\'Allemagne']);
         $question->setTheme($this->getReference('theme11'));
         $question->setIntitule('Quel évènement a provoqué le début des conflits avec l’Allemagne en 1939 ?');

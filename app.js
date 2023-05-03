@@ -22,7 +22,7 @@ const BtnCommencer = document.querySelector('#BtnCommencer')
 const sectionQuestions = document.querySelector('#Questions')
 const sectionQuestionsIntitule = document.querySelector('#QuestionsIntitule')
 const sectionReponses = document.querySelector('#Reponses')
-const sectionNext = document.querySelector('#next')
+//const sectionNext = document.querySelector('#next')
 let Theme
 let NbDeQuestion
 let reponsesArray = []
@@ -37,7 +37,7 @@ const displayThemes = (themes) => {
     themes.forEach(theme => {
         const p_theme = document.createElement('button');
         p_theme.textContent = theme.libelle
-        p_theme.classList.add("shadowfort", "btn", "btn-success", "m-3", "rounded-pill", "bg-gradient", "border-solid", "border-success", "text-white", "opacity-75", "col-10", 'col-lg-4', 'col-xl-3')
+        p_theme.classList.add("shadowfort", "alert", "alert-success", "m-3", "rounded-pill", "bg-gradient", "border-solid", "border-success", "text-success", "opacity-75", "col-10", 'col-lg-4', 'col-xl-3','h4')
         div.appendChild(p_theme)
         p_theme.addEventListener("click", function () {
             Theme = this.textContent;
@@ -117,20 +117,7 @@ BtnCommencer.addEventListener("click", function () {
                         const p_reponse = document.createElement('button');
                         p_reponse.textContent = reponse;
                         p_reponse.classList.add(
-                            'shadowfort',
-                            'btn',
-                            'btn-success',
-                            'm-3',
-                            'rounded-pill',
-                            'bg-gradient',
-                            'border',
-                            'border-success',
-                            'text-white',
-                            'opacity-75',
-                            'col-10',
-                            'col-lg-4',
-                            'col-xl-2'
-                        );
+                            "shadowfort", "alert", "alert-success", "m-3", "rounded-pill", "bg-gradient", "border-solid", "border-success", "text-success", "opacity-75", "col-12", 'col-lg-3', 'col-xl-2','h4' );
                         sectionReponses.appendChild(p_reponse);
 
 
@@ -184,14 +171,14 @@ const displayResult = (bonneReponses) =>{
     // afficher le score final ici
 
 
-sectionNext.classList.add('displayNone')
+//sectionNext.classList.add('displayNone')
     const result = document.createElement('h1');
     result.textContent = `Vous avez ${bonneReponses} bonne(s) réponse(s) sur ${NbDeQuestion} questions`
     result.classList.add("border-d", "rounded-pill", "d-flex", "justify-content-center", "text-success", "mb-4")
     sectionQuestionsIntitule.appendChild(result)
     const refreshButton = document.createElement('button');
     refreshButton.textContent = 'Recommencer ?';
-    refreshButton.classList.add('btn', 'rounded-pill', 'mt-3', 'mx-auto', 'd-flex', 'justify-content-center','shadowfort','btn-success','bg-gradient', 'text-white','grosBtn');
+    refreshButton.classList.add("shadowfort", "alert", "alert-success", "m-3", "rounded-pill", "bg-gradient", "border-solid", "border-success", "text-success", "opacity-75", "col-12", 'col-lg-3', 'col-xl-2','h4','d-flex', 'justify-content-center','mx-auto');
     refreshButton.addEventListener('click', () => {
         location.reload();
     });
