@@ -138,8 +138,10 @@ BtnCommencer.addEventListener("click", function () {
 
                             reponseDonne = this.textContent;
                             const bonneReponse = question[i].reponseCorrect || "non défini";
-                            reponses = `À la question : "${question[i].intitule}", vous avez répondu : "${reponseDonne}" . La bonne réponse était : ${bonneReponse} \n`;
+                            reponses = `À la question : "${question[i].intitule}", vous avez répondu : "${reponseDonne}".\n`;
+                            let reponses2 = `La bonne réponse était : "${bonneReponse}".\n`;
                             reponsesArray.push(reponses)
+                            reponsesArray.push(reponses2)
 
                             if (reponseDonne === question[i].reponseCorrect) {
                                 bonneReponses++;
